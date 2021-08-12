@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("./img/kaushik-panchal-0juC5JIhPks-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+input, button {
+    border: none;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.wrapper {
+    max-width: 28rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #f2f2f2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)), url("./img/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.bar {
+    width: 25px;
+    cursor: pointer;
+}
+
+.bar span {
+    display: block;
+    height: 2px;
+    background-color: #f2f2f2;
+    margin: 5px;
+}
+
+.bar span:nth-child(1) {
+    width: 50%;
+}
+.bar span:nth-child(2) {
+    width: 100%;
+}
+.bar span:nth-child(3) {
+    width: 75%;
+}
+
+.title {
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+}
+
+.plus {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.plus span {
+    display: block;
+    position: absolute;
+    background-color: #B4C0CC;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.plus span:nth-child(1) {
+    width: 50%;
+    height: 2px;
+}
+.plus span:nth-child(2) {
+    height: 50%;
+    width: 2px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+}
+
+.search-input {
+    width: 100%;
+    padding: .7rem;
+    border-radius: .5rem 0 0 .5rem;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(255,255,255,.6);
+}
+
+.search-btn {
+    padding: .7rem;
+    border-radius: 0 .5rem .5rem 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #a2a2a2;
+    background-color: rgba(255,255,255,.6);
+}
+
+.location {
+    font-size: 2.2rem;
+    margin: 1rem auto .5rem;
+    text-align: center;
+}
+
+.date {
+    font-weight: 500;
+    text-align: center;
+}
+
+.degree {
+    font-size: 5rem;
+    margin: 2rem auto;
+    border-bottom: 3px dashed;
+    font-weight: 600;
+}
+
+.weather {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.icon {
+    margin: 0.5em auto;
+}
+
+.temp {
+    font-size: 1.5rem;
+}
+
+.link {
+    color: #f2f2f2;
+    text-decoration: none;
+    margin: 1rem auto 0;
+}
+
+/* Responsive */
+
+@media (max-width: 410px) {
+    .top {
+        margin-bottom: 0;
+    }
+
+    .title {
+        font-size: .85rem;
+    }
+
+    .search-input {
+        width: 80%;
+        padding: .4rem;
+        font-size: 1rem;
+    }
+    
+    .search-btn {
+        padding: .4rem;
+        font-size: 1rem;
+    }
+
+    .location {
+        font-size: 1.8rem;
+        margin-top: .5rem;
+    }
+
+    .degree {
+        font-size: 3.5rem;
+        margin: 1rem auto;
+    }
+
+    .icon {
+        margin: 0;
+    }
+}
