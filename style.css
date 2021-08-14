@@ -172,6 +172,7 @@ form {
     color: #f2f2f2;
     text-decoration: none;
     margin: 1rem auto 0;
+    outline: none;
 }
 
 /* Responsive */

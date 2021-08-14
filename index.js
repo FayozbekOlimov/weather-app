@@ -36,7 +36,16 @@ form.addEventListener('submit', getResult);
 
 function getResult(e) {
     e.preventDefault();
-    fetch(`${apiAddress}${searchInput.value}&units=metric&appid=${apiKey}`).then(request => request.json())
+    fetch(`${apiAddress}${searchInput.value}&units=metric&appid=${apiKey}`)
+    .then(
+        function response(res) {
+            if(res.status != 404) {
+                return res.json();
+            } else {
+                alert("City " + res.statusText);
+            }
+        }
+    )
     .then(jsonData => showResult(jsonData));
 }
 
