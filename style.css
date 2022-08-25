@@ -12,7 +12,7 @@ body {
     align-items: center;
     min-height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    background-image: url("./img/kaushik-panchal-0juC5JIhPks-unsplash.jpg");
+    background-image: url("./img/bodyBg.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -137,9 +137,16 @@ form {
     background-color: rgba(255,255,255,.6);
 }
 
+.weather-data {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 .location {
     font-size: 2.2rem;
-    margin: 1rem auto .5rem;
+    margin: .5rem auto;
     text-align: center;
 }
 
@@ -150,7 +157,7 @@ form {
 
 .degree {
     font-size: 5rem;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     border-bottom: 3px dashed;
     font-weight: 600;
 }
@@ -160,10 +167,6 @@ form {
     text-align: center;
 }
 
-.icon {
-    margin: 0.5em auto;
-}
-
 .temp {
     font-size: 1.5rem;
 }
@@ -171,8 +174,12 @@ form {
 .link {
     color: #f2f2f2;
     text-decoration: none;
-    margin: 1rem auto 0;
+    margin: .8rem auto 0;
     outline: none;
+}
+
+.link i {
+    color: orangered;
 }
 
 /* Responsive */
@@ -199,15 +206,10 @@ form {
 
     .location {
         font-size: 1.8rem;
-        margin-top: .5rem;
     }
 
     .degree {
         font-size: 3.5rem;
         margin: 1rem auto;
-    }
-
-    .icon {
-        margin: 0;
     }
 }

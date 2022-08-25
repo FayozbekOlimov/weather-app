@@ -18,41 +18,50 @@ const temp = document.querySelector('.temp');
 
 const apiKey = '7a13b51f1f360b2a5e6559a9c06c1a51';
 const apiAddress = `https://api.openweathermap.org/data/2.5/weather?q=`;
+const defaultCity = 'Fergana';
 
 const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const today = new Date();
 const year = today.getFullYear(),
-      monthIndex = today.getMonth(),
-      weekIndex = today.getDay(),
-      day = today.getDate();
+    monthIndex = today.getMonth(),
+    weekIndex = today.getDay(),
+    day = today.getDate();
 
 // ========== // ========== //
 
 date.innerText = `${week[weekIndex]}, ${month[monthIndex]} ${day}, ${year}`;
 
+document.addEventListener('DOMContentLoaded', () => {
+    sendRequest(defaultCity);
+});
+
 form.addEventListener('submit', getResult);
 
 function getResult(e) {
     e.preventDefault();
-    fetch(`${apiAddress}${searchInput.value}&units=metric&appid=${apiKey}`)
-    .then(
-        function response(res) {
-            if(res.status != 404) {
+    sendRequest(searchInput.value);
+}
+
+function sendRequest(city) {
+    fetch(`${apiAddress}${city}&units=metric&appid=${apiKey}`)
+        .then((res) => {
+            if (res.status != 404) {
                 return res.json();
             } else {
                 alert("City " + res.statusText);
+                searchInput.value = '';
             }
-        }
-    )
-    .then(jsonData => showResult(jsonData));
+        })
+        .then(jsonData => showResult(jsonData));
 }
 
 function showResult(data) {
+    console.log(data)
     locationCity.innerText = `${data.name}, ${data.sys.country}`;
     degree.innerText = `${Math.round(data.main.temp)}°c`;
-    icon.src =`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-    temp.innerText =  `${Math.round(data.main.temp_min)}°c / ${Math.round(data.main.temp_max)}°c`;
+    icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+    temp.innerText = `${Math.round(data.main.temp_min)}°c / ${Math.round(data.main.temp_max)}°c`;
     weather.innerText = `${data.weather[0].main}`;
 }

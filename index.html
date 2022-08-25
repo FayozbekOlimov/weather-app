@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather forecast</title>
-    
+
     <link rel="icon" href="./img/icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="wrapper">
@@ -27,24 +31,28 @@
             </div>
 
             <form>
-                <input class="search-input" type="text" required autofocus autocomplete="off" placeholder="Search . . .">
+                <input class="search-input" type="text" required autofocus autocomplete="off"
+                    placeholder="Search . . .">
                 <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
             </form>
 
-            <h1 class="location">London, GB</h1>
+            <div class="weather-data">
+                <h1 class="location"></h1>
+                <h3 class="date"></h3>
+                <h1 class="degree"></h1>
+                <p class="weather"></p>
+                <img class="icon" src="">
+                <p class="temp"></p>
+            </div>
 
-            <h3 class="date"></h3>
-            <h1 class="degree">30°c</h1>
-            <p class="weather">Few clouds</p>
-
-            <img class="icon" src="http://openweathermap.org/img/wn/02d@2x.png">
-
-            <p class="temp">28°c / 32°c</p>
-            <a class="link" target="_blank" href="https://github.com/FayozbekOlimov/">FayozbekOlimov <i class="fab fa-github"></i></a>
+            <a class="link" target="_blank" href="https://openweathermap.org/">
+                OpenWeather <i class="fas fa-sun"></i>
+            </a>
         </div>
     </div>
 
     <!-- JavaScript -->
     <script src="./index.js"></script>
 </body>
+
 </html>
